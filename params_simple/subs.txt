@@ -1,0 +1,142 @@
+// reduplicating a line weights it higher, btw.
+
+
+//sites
+sp a _ s
+sp ^r p :'s _ s
+sp ^r p :'s _ s
+sp av _ a _ s
+sp n _ s
+sp l _ s
+sp ^r p :'s _ a _ s
+sp ^r p :'s _ l _ s
+sp s :-on- l
+sp s :-upon- l
+sp s :-at- l
+sp $np :'s _ $sp
+sp $sp _ :of _ :the _ $np
+
+sp $np _ $sp
+sp $ap _ $sp
+sp $vp _ $sp
+sp $lp _ s
+ep $pn :'s _ $ep
+sp n _ $sp
+sp a _ $sp
+sp v _ $sp
+
+
+//enemies
+ep $ap _ e
+ep $vp _ e
+ep a _ e
+ep ^r p :'s _ e
+ep av _ a _ e
+ep l _ e
+ep v _ e
+ep n _ e
+ep l _ e
+ep s _ e
+ep ^r p :'s _ l _ e
+ep $np :'s _ $ep
+ep $ep _ :of _ :the _ $np
+
+ep $lp _ e
+ep $ap _ $ep
+ep $vp _ $ep
+ep $vp _ $ep
+ep $pn :'s _ $ep
+
+//miniboss
+mbp0 ^r p :'s _ mb
+mbp0 ^r p _ :and _ ^r p :'s _ mb
+mbp0 ^c $pn :'s _ mb
+mbp0 ^r p _ :and _ ^r p :'s _ $ap _ mb
+mbp0 ^r p :'s _ $ap _ mb
+mbp0 ^c $pn :'s _ $ap _ mb
+mbp0 $sp _ mb
+$_mbp ^+1 $mbp0 _ :of _ :the _ $ep :s 
+$mbp $mbp0 _ :of _ :the _ $sp
+$_mbp ^+1 $mbp0 _ :of _ :the _ s
+$_mbp ^+2 $mbp0
+
+//non-nouns
+//adj phrases
+ap a
+ap av _ $ap
+ap $np :-like
+
+//verb... phrases?? non-per-se, I guess
+vp v
+vp $np :- v
+
+//nouns
+np $ap _ $np
+np $vp _ $np
+np $pn :'s _ $np
+np $np _ :of _ :the _ $np
+
+np a _ n
+np a _ n
+np ^r p :'s _ n
+np v _ n
+np n
+np n :-like _ n
+np l _ n
+np l _ n
+np s _ n
+
+// locations
+lp $ap _ $lp
+lp $vp _ $lp
+
+lp l
+lp a _ l
+lp v _ l
+
+// proper noun
+
+pn ^r p
+pn ^r p
+pn ^r p
+pn :John _ ^c n
+pn ^c $nplp _ ^r p
+pn ^r p _ :of _ :the _ $nplp
+
+// locations: no people in title
+nplp $npap _ $nplp
+nplp $vp _ $nplp
+nplp l
+nplp a _ l
+nplp v _ l
+
+//adj phrases: no people mentions
+npap a
+npap av _ $npap
+npap $npnp :-like
+// vp without people mentioned
+npvp v
+npvp $npnp :- v
+
+//nouns: no people
+npnp $npap _ $npnp
+npnp $npvp _ $npnp
+
+npnp a _ n
+npnp v _ n
+npnp n
+npnp n :-like _ n
+npnp l _ n
+npnp s _ n
+
+//cod enemies
+cep $ap _ ce
+cep $vp _ ce
+cep ca _ ce
+cep av _ ca _ ce
+cep v _ ce
+cep n _ ce
+cep $cep _ :of _ :the _ $np
+cep ca_ $cep
+cep $ap _ $cep
+cep $vp _ $cep
